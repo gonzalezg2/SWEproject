@@ -37,6 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_nose'
+]
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+# use these only with CircleCI
+NOSE_ARGS = [
+    # '--verbosity=2',  # verbose output
+    #'--with-xunit',  # enable XUnit plugin
+    #'--xunit-file=test-results/xunittest.xml',  # the XUnit report file
 ]
 
 MIDDLEWARE = [
