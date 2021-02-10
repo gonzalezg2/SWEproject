@@ -11,3 +11,6 @@ class ExampleTestCase(TestCase):
 
 	def testCase2(self):
 		pass
+
+	def testCaseFailing(self):
+		self.assertEquals(2,3)
