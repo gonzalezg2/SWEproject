@@ -1,7 +1,6 @@
 from django.test import TestCase
 from django.test import SimpleTestCase
 from django.contrib.auth.models import User
-from django.contrib.auth import get_user_model
 from math import sqrt
 
 # MAKE SURE TEST CASES START WITH 'test'!!!!!!!!
@@ -31,10 +30,20 @@ class ExampleTestCases(SimpleTestCase):
 class ExampleTestCasesWithDatabase(TestCase):
 	
 	def setUp(self):
-		self.adminUser = User.objects.create_user(username="joe")
+		self.joe = User.objects.create_user(username="joe")
 
-	def testDatabase(self):
+	def testDatabaseUsers(self):
 		if User.objects.filter(username="joe").exists():
-			print("User joe created successfully")
+			print("User joe created successfully") # this will show up in xml log on CircleCI website
 		else:
 			raise Exception("User not created")
+
+	def testPasswordChange(self):
+		badPassword = '123'
+		self.joe.set_password(badPassword)
+		self.joe.save()
+
+		from django.contrib.auth.hashers import check_password
+		passwordMatch = check_password(badPassword, User.objects.filter(username="joe")[0].password)
+		assert(passwordMatch)
+
