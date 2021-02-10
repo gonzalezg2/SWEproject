@@ -10,11 +10,11 @@
 5. Navigate to http://localhost:8000 (or http://127.0.0.1:8000) in your browser
 
 # Testing notes:
-CircleCI is set up to automatically run tests and store the results. You can see these online on the tests tab under a job
+CircleCI is set up to automatically run tests and store the results. You can see these online on the tests tab under a job\
 (for example, see https://app.circleci.com/pipelines/github/TeamGlab/SWEproject/20/workflows/bfcde501-457b-4c01-8375-648470840b26/jobs/21/tests)
 
-You can also view the xml output on the artifacts tab
+You can also view the xml output on the artifacts tab\
 (for example, see https://app.circleci.com/pipelines/github/TeamGlab/SWEproject/20/workflows/bfcde501-457b-4c01-8375-648470840b26/jobs/21/artifacts)
 
-To run locally, cd into UFSailWebsite and run `python manage.py test`
+To run locally, cd into UFSailWebsite and run `python manage.py test`\
 You can append `-v 2` to this command in order to see test cases listed (and some other information)
