@@ -10,6 +10,7 @@ jobs:
       - restore_cache:
           key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
       - run:
+          name: Setup venv
           command: |
             python3 -m venv venv
             . venv/bin/activate
@@ -19,8 +20,10 @@ jobs:
           paths:
             - "venv"
       - run:
-          name: Running tests
+          name: Run tests
           command: |
             . venv/bin/activate
             cd UFSailWebsite
             python3 manage.py test
+      - store_test_results:
+          path: test-results
