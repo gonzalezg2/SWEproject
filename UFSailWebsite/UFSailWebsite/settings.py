@@ -31,6 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # our apps
+    'TestApp',
+
+    # default/utility
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,10 +44,16 @@ INSTALLED_APPS = [
     'django_nose'
 ]
 
+# Use to get output for CircleCI
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
-# use these only with CircleCI
+
 NOSE_ARGS = [
+    # show any prints/logs when running tests locally
+    '--nocapture',
+    '--nologcapture'
+
+    # uses these with CircleCI builds (see config.yml)
     # '--verbosity=2',  # verbose output
     #'--with-xunit',  # enable XUnit plugin
     #'--xunit-file=test-results/xunittest.xml',  # the XUnit report file
