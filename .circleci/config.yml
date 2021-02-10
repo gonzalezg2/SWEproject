@@ -28,3 +28,5 @@ jobs:
             python3 manage.py test --verbosity=2 --with-xunit --xunit-file=../test-results/xunittest.xml
       - store_test_results:
           path: test-results
+      - store_artifacts:
+          path: test-results
