@@ -1,0 +1,9 @@
+{% if latest %}
+    <ul>
+    {% for event in latest %}
+        <li><a href="/calendar/{{ event.id }}/">{{ event.description }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No events are available.</p>
+{% endif %}

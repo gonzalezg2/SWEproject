@@ -1,0 +1,37 @@
+.month {
+  width: 98%;
+  margin: auto;
+  font-size: 13px;
+}
+
+.month tr, .month td {
+  border: 0.5px solid black;
+}
+
+.month th {
+  padding: 10px;
+  font-size: 18px;
+}
+
+.month td {
+  vertical-align: top;
+  text-align: left;
+  width: 200px;
+  height: 150px;
+  padding: 10px 0px 0px 5px;
+}
+
+.month {
+  font-size: 25px;
+}
+
+.weekend {
+  font-size: 16px;
+  background: #FFEADA
+}
+
+.weekday {
+  font-size: 16px;
+  background: #EEAD12
+}
+
