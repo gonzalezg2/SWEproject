@@ -17,6 +17,8 @@
 }
 
 body {
+  /* account for floating nav bar - TODO: find a better way? */
+  margin-top: 56px;
   /* account for footer */
   margin-bottom: 45px; 
 }
