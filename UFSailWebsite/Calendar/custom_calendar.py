@@ -1,7 +1,6 @@
 from calendar import HTMLCalendar
 
 class Calendar(HTMLCalendar):
-    cssclasses = ["weekday", "weekday", "weekday", "weekday", "weekday", "weekend", "weekend"]
 
     def formatday(self, day, weekday):
         """
@@ -11,7 +10,8 @@ class Calendar(HTMLCalendar):
             # day outside month
             return '<td class="%s">&nbsp;</td>' % self.cssclass_noday
         else:
-            return '<td class="%s">%d</td>' % (self.cssclasses[weekday], day)
+            cssclass = "weekday" if 0 <= weekday <= 4 else "weekend"
+            return '<td class="%s">%d</td>' % (cssclass, day)
 
     def formatweek(self, theweek):
         """
